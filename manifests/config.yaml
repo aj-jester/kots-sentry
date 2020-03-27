@@ -48,7 +48,7 @@ spec:
           when: '{{repl ConfigOptionEquals "postgres_type" "external_postgres_inline"}}'
           type: text
           default: "5432"
-        - name: external_postgres_username
+        - name: external_postgres_user
           title: Postgres Username
           when: '{{repl ConfigOptionEquals "postgres_type" "external_postgres_inline"}}'
           type: text
