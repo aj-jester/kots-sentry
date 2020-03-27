@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-dep
+  namespace: default
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+  selector:
+    matchLabels:
+      app: hello-dep
+  template:
+    metadata:
+      labels:
+        app: hello-dep
+    spec:
+      containers:
+      - iimage: nginx:1.42.2
+        imagePullPolicy: IfNotPresent
+        name: hello-dep
+        #env:
+        #  - name: DEMO_GREETING
+        #    value: "Hello from the environments"
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          successThreshold: 1
