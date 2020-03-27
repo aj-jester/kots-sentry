@@ -33,7 +33,7 @@ spec:
             - name: embedded_postgres
               title: Embedded Postgres
             - name: external_postgres_inline
-              title: External Postgres Inline
+              title: External Postgres
         - name: embedded_postgres_password
           hidden: true
           type: password
