@@ -200,3 +200,7 @@ spec:
       servicePort: 9000
       localPort: 9000
       applicationUrl: "http://sentry"
+    - serviceName: "example-nginx"
+      servicePort: 8080
+      localPort: 8080
+      applicationUrl: "http://example-nginx"

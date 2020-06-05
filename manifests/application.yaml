@@ -29,3 +29,5 @@ spec:
     links:
       - description: Open Sentry Enterprise
         url: "http://sentry"
+      - description: Open Nginx
+        url: "http://example-nginx"
